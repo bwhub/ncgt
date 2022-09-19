@@ -1,0 +1,19 @@
+BootStrap: docker
+# From: pytorch/pytorch:1.9.0-cuda10.2-cudnn7-devel
+From: pytorch/pytorch:1.10.0-cuda11.3-cudnn8-devel
+
+%files
+    ./requirements.txt /requirements.txt
+
+%post
+    pip3 install --user -r /requirements.txt
+
+# %environment
+#     export LC_ALL=C
+#     export PATH=/usr/games:$PATH
+
+# %runscript
+#     pwd
+
+# %labels
+#     Author Blake
